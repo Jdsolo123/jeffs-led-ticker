@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Jeff's Ticker</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  // Widget mode (?widget=1): the Electron desktop bar loads this. Strip every
+  // page chrome so only the LED strip renders, edge to edge.
+  if (/[?&]widget=1/.test(location.search)) document.documentElement.classList.add('widget');
+</script>
+</head>
+<body>
+<header class="bar">
+  <span class="brand">JEFF'S TICKER <span class="live-tag">LIVE</span></span>
+</header>
+
+<main class="wall">
+  <div class="mount">
+    <div class="frame" id="frame">
+      <canvas id="strip" aria-label="LED matrix ticker"></canvas>
+      <div class="dotmask" id="dotmask" aria-hidden="true"></div>
+    </div>
+    <div class="shelf-shadow" aria-hidden="true"></div>
+  </div>
+  <p class="hint" id="hint">tap ticker: dot view / full width · 384x32 (6-panel) LED matrix, live sports / stocks / weather / news</p>
+  <div class="speed-row">
+    <span class="speed-label">SPEED</span>
+    <input type="range" id="speed" min="20" max="150" step="5" aria-label="Scroll speed">
+    <span class="speed-label" id="speedVal">50 PX/S</span>
+  </div>
+</main>
+
+<footer class="bar">
+  <span class="status"><span class="pulse" id="pulse"></span><span id="statusText">CONNECTING</span></span>
+  <span class="spec" id="infoBadge"></span>
+</footer>
+
+<script src="data.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

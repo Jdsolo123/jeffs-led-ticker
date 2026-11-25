@@ -1,0 +1,9 @@
+{
+  "name": "jeffs-ticker-widget",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jeff's Ticker as a desktop bar pinned to the bottom of the screen",
+  "main": "main.js",
+  "scripts": { "start": "electron ." },
+  "devDependencies": { "electron": "^33.2.0" }
+}

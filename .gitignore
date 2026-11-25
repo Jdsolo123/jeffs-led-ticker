@@ -1,0 +1,32 @@
+# Secrets — copy keys.example.py to keys.py and fill in your own
+keys.py
+.spotify_token
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / Electron
+node_modules/
+widget/node_modules/
+
+# Runtime state + logs
+*.log
+ticker_state.json
+settings.json
+
+# Local scratch — render proofs, experiment output
+render-proof/
+scratchpad/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Wordmark source images — drop folder for regenerating marks, not shipped
+wordmark-src/
+
+# Personal assistant notes
+CLAUDE.md
